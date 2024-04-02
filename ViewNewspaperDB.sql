@@ -22,6 +22,7 @@ FROM Edition, Article
 WHERE Article.NewspaperTitle = Edition.NewspaperTitle
 AND Article.PubDate = Edition.PubDate
 GROUP BY Edition.NewspaperTitle, Edition.PubDate;
+# Test
 SELECT * FROM EditionReadTimes;
 
 # Newspaper readers
