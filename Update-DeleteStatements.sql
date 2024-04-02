@@ -15,7 +15,7 @@ WHERE SSN = '0101984321' AND StreetName = 'Algade' AND CivicNumber = '2';
 
 /* update the Text and ReadTimes fields of an existing article in the Article table.*/
 UPDATE Article
-SET Text = 'Updated article text with more comprehensive information on global warming...', 
+SET Text = 'New Text', 
     ReadTimes = 600
 WHERE ArticleTitle = 'The Impact of Global Warming'
 AND ArticleDate = '2024-04-01 00:00:00'
