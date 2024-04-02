@@ -1,6 +1,6 @@
 USE newspaper_db;
 
-INSERT INTO Journalist (SSN, FirstName, LastName) VALUES
+INSERT Journalist VALUES
 ('2412001234','Smith','Jackson'),
 ('0101984321','Anders','Andersen'),
 ('0202651122','Eddy','Thorsen');
@@ -18,7 +18,7 @@ INSERT Phone VALUES
 ('87654321','0202651122');
 
 
-INSERT INTO Email (Email, SSN) VALUES
+INSERT Email VALUES
 ('SmithJackson@gmail.com','2412001234'),
 ('AndersAndersen@mail.dk','0101984321'),
 ('EddyTheEditor@hotmail.com','0202651122');
