@@ -1,9 +1,12 @@
+
 DROP TRIGGER IF EXISTS ArticleBeforeEdition;
 DELIMITER //
 CREATE TRIGGER ArticleBeforeEdition
 BEFORE INSERT ON Article FOR EACH ROW
 BEGIN
-IF NEW.ArticleDate < NEW.PubDate THEN SET NEW.ArticleDate = '0000-00-00 00:00:00';
+IF NEW.ArticleDate < NEW.PubDate 
+THEN SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = 'Article is published after the Edition';
 END IF;
 END//
 DELIMITER ;
