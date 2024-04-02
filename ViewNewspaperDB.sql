@@ -71,7 +71,8 @@ select * from topicreads;
 -- Find article in each topic that corresponds to the most read -- TODO: identify articles on entire primary key
 drop view if exists TopicMostRead;
 CREATE VIEW TopicMostRead as
-select * from article natural left join topicreads where article.topic = topicreads.topic and article.readtimes = topicreads.maxreads;
+select topicreads.topic Topic, articletitle MostReadArticle, article.readtimes ReadTimes, ArticleDate, Newspapertitle, Pubdate
+from article natural left join topicreads where article.topic = topicreads.topic and article.readtimes = topicreads.maxreads;
 select * from topicmostread;
 
 -- View of topics with less reads than the average
