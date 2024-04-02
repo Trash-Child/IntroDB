@@ -65,6 +65,18 @@ SELECT *
 FROM AuthorRoles
 WHERE SSN = 'YourSSNHere';
 
+-- FIND MOST READ ARTICLE IN EACH TOPIC
+-- Find max(readtimes) for every topic
+drop view if exists TopicMaxReads;
+CREATE VIEW TopicMaxReads as
+select topic, max(readtimes) maxreads from article group by topic;
+select * from topicmaxreads;
+
+-- Find article in each topix that corresponds to the most read -- TODO: identify articles on entire primary key
+drop view if exists TopicMostRead;
+CREATE VIEW TopicMostRead as
+select * from article natural left join topicmaxreads where article.topic = topicmaxreads.topic and article.readtimes = topicmaxreads.maxreads;
+select * from topicmostread;
 
 /*
 	Test views.
@@ -74,3 +86,5 @@ SELECT * FROM EditionReadTimes;
 SELECT * FROM NewspaperReadTimes;
 SELECT * FROM ArticlePhotoCount;
 SELECT * FROM AuthorRoles;
+select * from topicmostread;
+
