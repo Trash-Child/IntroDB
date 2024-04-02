@@ -6,6 +6,11 @@ USE newspaper_db;
 DROP VIEW IF EXISTS ArticleReadTimes;
 DROP VIEW IF EXISTS EditionReadTimes;
 DROP VIEW IF EXISTS NewspaperReadTimes;
+DROP VIEW IF EXISTS ArticlePhotoCount;
+DROP VIEW IF EXISTS AuthorRoles;
+drop view if exists TopicReads;
+drop view if exists TopicMostRead;
+drop view if exists TopicLessThanAvg;
 
 /*
 	Create views.
@@ -70,21 +75,22 @@ WHERE SSN = 'YourSSNHere';
 
 -- FIND MOST READ ARTICLE IN EACH TOPIC
 -- Find max(readtimes) for every topic
-drop view if exists TopicReads;
+
 CREATE VIEW TopicReads as
 select topic, sum(readtimes) totalreads, max(readtimes) maxreads, avg(readtimes) avgreads from article group by topic;
 select * from topicreads;
 
 -- Find article in each topic that corresponds to the most read -- TODO: identify articles on entire primary key
-drop view if exists TopicMostRead;
+
 CREATE VIEW TopicMostRead as
-select * from article natural left join topicreads where article.topic = topicreads.topic and article.readtimes = topicreads.maxreads;
+select topicreads.topic Topic, articletitle MostReadArticle, article.readtimes ReadTimes, ArticleDate, Newspapertitle, Pubdate
+from article natural left join topicreads where article.topic = topicreads.topic and article.readtimes = topicreads.maxreads;
 select * from topicmostread;
 
 -- View of topics with less reads than the average
-drop view if exists TopicLessThanAvg;
+
 Create view TopicLessThanAvg as
-	Select topic from topicreads where totalreads < (select avg(totalreads) from topicreads);
+	Select topic, totalreads from topicreads where totalreads < (select avg(totalreads) from topicreads);
 
     
 /*
