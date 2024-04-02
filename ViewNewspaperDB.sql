@@ -35,3 +35,16 @@ AND Article.PubDate = Edition.PubDate;
 SELECT * FROM ArticleReadTimes;
 SELECT * FROM EditionReadTimes;
 SELECT * FROM NewspaperReadTimes;
+
+-- FIND MOST READ ARTICLE IN EACH TOPIC
+-- Find max(readtimes) for every topic
+drop view if exists TopicMaxReads;
+CREATE VIEW TopicMaxReads as
+select topic, max(readtimes) readtimes from article group by topic;
+select * from topicmaxreads;
+
+-- Find article in each topix that corresponds to the most read -- TODO: identify articles on entire primary key
+drop view if exists TopicMostRead;
+CREATE VIEW TopicMostRead as
+select * from article natural left join topicmaxreads where article.topic = topicmaxreads.topic and article.readtimes = topicmaxreads.readtimes;
+select * from topicmostread;

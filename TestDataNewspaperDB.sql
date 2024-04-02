@@ -34,8 +34,10 @@ INSERT Edition VALUES
 ('The Weekly News','19910101 07:00:00 AM','0202851122');
 
 INSERT Article VALUES
-('ArticleTitle','ArticleDateTime','Topic','Text','ReadTimes','NewspaperTitle','PubDateTime'),
-('ArticleTitle','ArticleDateTime','Topic','Text','ReadTimes','NewspaperTitle','PubDateTime');
+('HArt1','2023-11-26 12:00:00','Health','Drink water','10','DailyNews','2023-11-26 12:00:05'),
+('HArt2','2023-11-27 12:02:00','Health','Eat legumes','12','DailyNews','2023-11-27 12:02:05'),
+('FArt1','2023-11-27 12:06:00','Finance','Invest Early','26','DailyNews','2023-11-27 12:06:05'),
+('FArt2','2023-11-27 12:06:00','Finance','Invest Earlier!','28','DailyNews','2023-11-27 12:06:05');
 
 INSERT Author VALUES
 ('Biology','Watson','90000'),
