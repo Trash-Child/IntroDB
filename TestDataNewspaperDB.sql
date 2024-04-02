@@ -1,6 +1,6 @@
 USE newspaper_db;
 
-INSERT Journalist VALUES
+INSERT INTO Journalist (SSN, FirstName, LastName) VALUES
 ('2412001234','Smith','Jackson'),
 ('0101984321','Anders','Andersen'),
 ('0202651122','Eddy','Thorsen');
@@ -18,7 +18,7 @@ INSERT Phone VALUES
 ('87654321','0202651122');
 
 
-INSERT Email VALUES
+INSERT INTO Email (Email, SSN) VALUES
 ('SmithJackson@gmail.com','2412001234'),
 ('AndersAndersen@mail.dk','0101984321'),
 ('EddyTheEditor@hotmail.com','0202651122');
@@ -38,7 +38,9 @@ INSERT Newspaper VALUES
 
 INSERT Edition VALUES
 ('The Daily News','2004-08-01 06:00:00','0101984321'),
-('The Weekly News','1991-01-01 07:00:00','0202651122');
+('The Daily News','2019-06-01 18:00:00','2412001234'),
+('The Weekly News','1991-01-01 07:00:00','0202851122'),
+('The Weekly News','1998-07-12 07:00:00','0202851122');
 
 INSERT Article VALUES
 ('Rusland melder om droneangreb over 1.000 kilometer fra Ukraine','2024-04-02 10:43:00','Krig','
@@ -54,16 +56,25 @@ Ajax har suspenderet administrerende direktør i klubben Ajax, Alex Kroes, med h
 Det skriver den hollandske storklub på sin hjemmeside. 
 Årsagen til den opsigtsvækkende beslutning skal findes i, at det er kommet frem, at Kroes op til sin ansættelse i august sidste år købte over 17.000 Ajax-aktier ugentligt. ',
 
-'5000','The Weekly News','1991-01-01 07:00:00');
+'5000','The Weekly News','1991-01-01 07:00:00'),
+('Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42','Culture','I dag er dronningen blevet set på åben gade, hvor han ligner en typisk dansk bedstemor. Mange danskere er glade for at se dronningen være ydmyg.','1874','The Daily News','2019-06-01 18:00:00'),
+('Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57','Environment','Efter ny lovgivning om at det er blevet forbudt at smide skrald i parken, er parkens vand blevet renere. Dette har ført til at flere og flere dyr flokkes omkring parkernes søer.','3856','The Weekly News','1998-07-12 07:00:00');
+
 
 INSERT Author VALUES
 ('0202651122','Writer','Topboss suspenderet efter mistanke om insiderhandel', '2005-02-13 11:37:00'),
 ('2412001234','Writer','Rusland melder om droneangreb over 1.000 kilometer fra Ukraine', '2024-04-02 10:43:00'),
-('0101984321','Leader','Rusland melder om droneangreb over 1.000 kilometer fra Ukraine', '2024-04-02 10:43:00');
+('0101984321','Leader','Rusland melder om droneangreb over 1.000 kilometer fra Ukraine', '2024-04-02 10:43:00'),
+('2412001234','Writer','Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42'),
+('0101984321','Leader','Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42'),
+('0202651122','Writer','Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57'),
+('0202651122','Leader','Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57');
 
 INSERT ArticlePhoto VALUES
 ('Tank i Ukraine','2024-01-02 17:21:00', '2412001234', 'Rusland melder om droneangreb over 1.000 kilometer fra Ukraine','2024-04-02 10:43:00', 'The Daily News','2004-08-01 06:00:00'),
-('Michael Van Prag','2023-01-02 13:21:00', '0202651122', 'Topboss suspenderet efter mistanke om insiderhandel','2005-02-13 11:37:00', 'The Weekly News','1991-01-01 07:00:00');
+('Michael Van Prag','2023-01-02 13:21:00', '0202651122', 'Topboss suspenderet efter mistanke om insiderhandel','2005-02-13 11:37:00', 'The Weekly News','1991-01-01 07:00:00'),
+('Dronning Margrethe den anden der spiser en pandekage.','2008-05-31 13:43:12','2412001234','Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42','The Daily News','2019-06-01 18:00:00'),
+('And i sø.','2000-01-01 01:01:01','0101984321','Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57','The Weekly News','1998-07-12 07:00:00');
 
 SELECT * FROM Journalist;
 SELECT * FROM Address;
