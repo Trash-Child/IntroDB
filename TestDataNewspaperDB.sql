@@ -57,6 +57,19 @@ Det skriver den hollandske storklub på sin hjemmeside.
 Årsagen til den opsigtsvækkende beslutning skal findes i, at det er kommet frem, at Kroes op til sin ansættelse i august sidste år købte over 17.000 Ajax-aktier ugentligt. ',
 
 '5000','The Weekly News','1991-01-01 07:00:00'),
+('Mudderkast på borgen - Boje insisterer på gratis underbukser','2022-08-12 10:30:29','Politik',
+'Debatten raser igen om hvorvidt staten bør finansiere gratis menstruationsprodukter på offentlige toiletter. Debatten blev personlig, efter Lars Boje (Nye Borgerlige) sammenlignede menstruation med at skide i bukserne.
+- Skal der så også være gratis underbukser? Hvad nu hvis jeg går en tur på skaden, og så spontant skider jeg i bukserne? 
+Udtalen har vagt stor debat i det offentlige rum, hvor folk nu diskuterer hvor vidt de to hændelser er sammenlignelige, i stedet for at tale om det egentlige emne - skal folk med livmoder have en håndsrækning til at eksistere på lige fod med folk uden, når menstruationen kommer uventet?',
+13852, 'The Daily News', '2019-06-01 18:00:00'
+),
+
+('Hvem gav ordren? Forsøg på afdækning af minksagen stødt på grund igen','2020-09-09 11:00:30', 'Politik',
+'Var det Mette, var det Barbara, var det en af de mange afskedte ministre? Ingen vil tage skylden',
+10005, 'The Weekly News', '1998-07-12 07:00:00'
+),
+
+
 ('Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42','Kultur','I dag er dronningen blevet set på åben gade, hvor han ligner en typisk dansk bedstemor. Mange danskere er glade for at se dronningen være ydmyg.','1874','The Daily News','2019-06-01 18:00:00'),
 ('Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57','Miljø','Efter ny lovgivning om at det er blevet forbudt at smide skrald i parken, er parkens vand blevet renere. Dette har ført til at flere og flere dyr flokkes omkring parkernes søer.','3856','The Weekly News','1998-07-12 07:00:00'),
 ('Brøndby vinder over FCK', '2020-05-13 12:34:00', 'Sport','FCK kom foran 1-0 men tabte 2-1. Øv', '2143','The Weekly News','1998-07-12 07:00:00');
