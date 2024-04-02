@@ -4,43 +4,74 @@ INSERT Journalist VALUES
 ('2412001234','Smith','Jackson'),
 ('0101984321','Anders','Andersen'),
 ('0202651122','Eddy','Thorsen');
-SELECT * FROM Journalist;
+
 
 INSERT Address VALUES
-('2412001234','Hovedgade','1','København','1000',NULL,'Denmark'),
-('0101984321','Algade','2','Kgs. Lyngby','2800',NULL,'Denmark'),
-('0202851122','Lærkevej','100','Kgs. Lyngby','2800',NULL,'Denmark');
+('2412001234','Hovedgade','1','København','1000','','Denmark'),
+('0101984321','Algade','2','Kgs. Lyngby','2800','','Denmark'),
+('0202651122','Lærkevej','100','Kgs. Lyngby','2800','','Denmark');
 
-INSERT Phone VALUES
+
+INSERT Phone VALUES 
 ('12345678','2412001234'),
 ('11223344','0101984321'),
-('87654321','0202851122');
+('87654321','0202651122');
+
 
 INSERT Email VALUES
 ('SmithJackson@gmail.com','2412001234'),
 ('AndersAndersen@mail.dk','0101984321'),
-('EddyTheEditor@hotmail.com','0202851122');
+('EddyTheEditor@hotmail.com','0202651122');
+
 
 INSERT Photo VALUES
-('Dronning Margrethe den anden der spiser en pandekage.','20080531 01:43:12 PM','2412001234','image_data_example'),
-('And i sø.','20000101 01:01:01 AM','0101984321','image_data_example');
+('Dronning Margrethe den anden der spiser en pandekage.','2008-05-31 01:43:12','2412001234','image_data_example'),
+('And i sø.','2000-01-01 01:01:01','0101984321','image_data_example'),
+('Tank i Ukraine','2024-01-02 17:21:00','2412001234','image_data_example'),
+('Michael Van Prag','2023-01-02 13:21:00','0202651122','image_data_example');
+
 
 INSERT Newspaper VALUES
-('The Daily News','20040716 08:53:17 AM','00000001'),
-('The Weekly News','19901201 12:00:00 PM','00000100');
+('The Daily News','2004-07-16 08:53:17','00000001'),
+('The Weekly News','1990-12-01 12:00:00','00000100');
+
 
 INSERT Edition VALUES
-('The Daily News','20040801 06:00:00 AM','0101984321'),
-('The Weekly News','19910101 07:00:00 AM','0202851122');
+('The Daily News','2004-08-01 06:00:00','0101984321'),
+('The Weekly News','1991-01-01 07:00:00','0202651122');
 
 INSERT Article VALUES
-('ArticleTitle','ArticleDateTime','Topic','Text','ReadTimes','NewspaperTitle','PubDateTime'),
-('ArticleTitle','ArticleDateTime','Topic','Text','ReadTimes','NewspaperTitle','PubDateTime');
+('Rusland melder om droneangreb over 1.000 kilometer fra Ukraine','2024-04-02 10:43:00','Krig','
+
+To industrianlæg i den russiske region Tatarstan er blevet ramt af droneangreb omkring 1.100 kilometer fra grænsen til Ukraine, oplyser russiske embedsmænd tirsdag.
+Viser angrebet sig at komme fra ukrainsk område, vil det være et af de angreb, der har ramt længst inde på russisk territorium siden krigens begyndelse i februar 2022. Det oplyses dog ikke, om angrebet kom fra ukrainsk område.',
+
+'10035','The Daily News','2004-08-01 06:00:00'),
+
+('Topboss suspenderet efter mistanke om insiderhandel','2023-02-13 11:37:00','Sport','
+
+Ajax har suspenderet administrerende direktør i klubben Ajax, Alex Kroes, med henblik på at afskedige ham helt på et senere tidspunkt.
+Det skriver den hollandske storklub på sin hjemmeside. 
+Årsagen til den opsigtsvækkende beslutning skal findes i, at det er kommet frem, at Kroes op til sin ansættelse i august sidste år købte over 17.000 Ajax-aktier ugentligt. ',
+
+'5000','The Weekly News','1991-01-01 07:00:00');
 
 INSERT Author VALUES
-('Biology','Watson','90000'),
-('Comp. Sci.','Taylor','100000');
+('0202651122','Writer','Topboss suspenderet efter mistanke om insiderhandel', '2005-02-13 11:37:00'),
+('2412001234','Writer','Rusland melder om droneangreb over 1.000 kilometer fra Ukraine', '2024-04-02 10:43:00'),
+('0101984321','Leader','Rusland melder om droneangreb over 1.000 kilometer fra Ukraine', '2024-04-02 10:43:00');
 
 INSERT ArticlePhoto VALUES
-('Biology','Watson','90000'),
-('Comp. Sci.','Taylor','100000');
+('Tank i Ukraine','2024-01-02 17:21:00', '2412001234', 'Rusland melder om droneangreb over 1.000 kilometer fra Ukraine','2024-04-02 10:43:00', 'The Daily News','2004-08-01 06:00:00'),
+('Michael Van Prag','2023-01-02 13:21:00', '0202651122', 'Topboss suspenderet efter mistanke om insiderhandel','2005-02-13 11:37:00', 'The Weekly News','1991-01-01 07:00:00');
+
+SELECT * FROM Journalist;
+SELECT * FROM Address;
+SELECT * FROM Phone;
+SELECT * FROM Email;
+SELECT * FROM Photo;
+SELECT * FROM Newspaper;
+SELECT * FROM Edition;
+SELECT * FROM Article;
+SELECT * FROM Author;
+SELECT * FROM ArticlePhoto;

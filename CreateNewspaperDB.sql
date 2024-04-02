@@ -46,7 +46,7 @@ CREATE TABLE Address # Address of a journalist.
      CivicNumber	VARCHAR(16) 	NOT NULL,	# Needs to be varchar, since it has to include "123", "123 1. tv", etc...
      City			VARCHAR(64) 	NOT NULL,
      PostalCode		VARCHAR(16) 	NOT NULL,	# Some countries have long postal codes, with some containing letters. Size of 16 to be safe. (E.g. Russias postal codes has 13 characters including a hyphon (-), while the United Kingdoms postal codes contains letters.)
-     State			VARCHAR(64),	# Can be left as null.
+     State			VARCHAR(64)		NOT NULL,
      Country		VARCHAR(64) 	NOT NULL,
      PRIMARY KEY(SSN, StreetName, CivicNumber, City, PostalCode, State, Country),
      FOREIGN KEY		  (SSN)
