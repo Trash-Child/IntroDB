@@ -57,4 +57,6 @@ CREATE PROCEDURE AddArticle
 	VALUES (vArticleTitle, vArticleDate, vTopic, vText, vReadTimes, vNewspaperTitle, vPubDate);
 END //
 DELIMITER ;
+CALL AddArticle('ArticleTitle_test','ArticleDate_test','Topic_test','Text_test','ReadTimes_test','NewspaperTitle_test','PubDate_test');
+SELECT * FROM Article;
 
