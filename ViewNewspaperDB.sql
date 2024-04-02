@@ -30,7 +30,10 @@ CREATE VIEW NewspaperReadTimes AS
 SELECT Newspaper.NewspaperTitle, SUM(ReadTimes)
 FROM Newspaper, Edition, Article
 WHERE Article.NewspaperTitle = Edition.NewspaperTitle
-AND Article.PubDate = Edition.PubDate;
+AND Article.PubDate = Edition.PubDate
+GROUP BY Newspaper.NewspaperTitle;
+# Test
+SELECT * FROM NewspaperReadTimes;
 
 # Number of photos in an article
 CREATE VIEW ArticlePhotoCount AS
