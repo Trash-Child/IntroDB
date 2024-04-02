@@ -100,7 +100,7 @@ CREATE TABLE Edition # Edition of a newspaper.
 	); # NOTE: Articles in an edition are stored in 'Article' table.
 
 CREATE TABLE Article # Article for an edition.
-	(ArticleTitle	VARCHAR(64) 	NOT NULL,
+	(ArticleTitle	VARCHAR(100) 	NOT NULL,
      ArticleDate	DATETIME 		NOT NULL,	# Date for when the edition of the article was uploaded.
      Topic			VARCHAR(64) 	NOT NULL,
      Text			TEXT 			NOT NULL,	# Can store 65,535 characters. Should consider using MEDIUMTEXT which stores 16mil characters.
