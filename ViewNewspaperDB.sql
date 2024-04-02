@@ -63,17 +63,23 @@ WHERE SSN = 'YourSSNHere';
 
 -- FIND MOST READ ARTICLE IN EACH TOPIC
 -- Find max(readtimes) for every topic
-drop view if exists TopicMaxReads;
-CREATE VIEW TopicMaxReads as
-select topic, max(readtimes) maxreads from article group by topic;
-select * from topicmaxreads;
+drop view if exists TopicReads;
+CREATE VIEW TopicReads as
+select topic, sum(readtimes) totalreads, max(readtimes) maxreads, avg(readtimes) avgreads from article group by topic;
+select * from topicreads;
 
--- Find article in each topix that corresponds to the most read -- TODO: identify articles on entire primary key
+-- Find article in each topic that corresponds to the most read -- TODO: identify articles on entire primary key
 drop view if exists TopicMostRead;
 CREATE VIEW TopicMostRead as
-select * from article natural left join topicmaxreads where article.topic = topicmaxreads.topic and article.readtimes = topicmaxreads.maxreads;
+select * from article natural left join topicreads where article.topic = topicreads.topic and article.readtimes = topicreads.maxreads;
 select * from topicmostread;
 
+-- View of topics with less reads than the average
+drop view if exists TopicLessThanAvg;
+Create view TopicLessThanAvg as
+	Select topic from topicreads where totalreads < (select avg(totalreads) from topicreads);
+
+    
 /*
 	Test views.
 */
@@ -83,4 +89,5 @@ SELECT * FROM NewspaperReadTimes;
 SELECT * FROM ArticlePhotoCount;
 SELECT * FROM AuthorRoles;
 select * from topicmostread;
+select * from TopicLessThanAvg;
 
