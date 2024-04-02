@@ -115,7 +115,7 @@ CREATE TABLE Article # Article for an edition.
     CREATE TABLE Author # Journalist writing role of an article.
 	(SSN			VARCHAR(16) 	NOT NULL,
      Role			VARCHAR(64)		NOT NULL,
-     ArticleTitle	VARCHAR(64) 	NOT NULL,
+     ArticleTitle	VARCHAR(100) 	NOT NULL,
      ArticleDate	DATETIME		NOT NULL,
      PRIMARY KEY(SSN, Role, ArticleTitle, ArticleDate),
 	 FOREIGN KEY		  (SSN)
