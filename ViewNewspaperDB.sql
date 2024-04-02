@@ -75,11 +75,11 @@ SELECT * FROM AuthorRoles;
 -- Find max(readtimes) for every topic
 drop view if exists TopicMaxReads;
 CREATE VIEW TopicMaxReads as
-select topic, max(readtimes) readtimes from article group by topic;
+select topic, max(readtimes) maxreads from article group by topic;
 select * from topicmaxreads;
 
 -- Find article in each topix that corresponds to the most read -- TODO: identify articles on entire primary key
 drop view if exists TopicMostRead;
 CREATE VIEW TopicMostRead as
-select * from article natural left join topicmaxreads where article.topic = topicmaxreads.topic and article.readtimes = topicmaxreads.readtimes;
+select * from article natural left join topicmaxreads where article.topic = topicmaxreads.topic and article.readtimes = topicmaxreads.maxreads;
 select * from topicmostread;
