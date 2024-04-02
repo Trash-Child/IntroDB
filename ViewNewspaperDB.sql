@@ -6,6 +6,8 @@ USE newspaper_db;
 DROP VIEW IF EXISTS ArticleReadTimes;
 DROP VIEW IF EXISTS EditionReadTimes;
 DROP VIEW IF EXISTS NewspaperReadTimes;
+DROP VIEW IF EXISTS ArticlePhotoCount;
+DROP VIEW IF EXISTS AuthorRoles;
 drop view if exists TopicReads;
 drop view if exists TopicMostRead;
 drop view if exists TopicLessThanAvg;
@@ -81,7 +83,7 @@ select * from topicmostread;
 -- View of topics with less reads than the average
 
 Create view TopicLessThanAvg as
-	Select topic from topicreads where totalreads < (select avg(totalreads) from topicreads);
+	Select topic, totalreads from topicreads where totalreads < (select avg(totalreads) from topicreads);
 
     
 /*
