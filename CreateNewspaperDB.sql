@@ -117,7 +117,7 @@ CREATE TABLE Article # Article for an edition.
      Role			VARCHAR(64)		NOT NULL,
      ArticleTitle	VARCHAR(64) 	NOT NULL,
      ArticleDate	DATETIME		NOT NULL,
-     PRIMARY KEY(SSN, ArticleTitle, ArticleDate),
+     PRIMARY KEY(SSN, Role, ArticleTitle, ArticleDate),
 	 FOREIGN KEY		  (SSN)
      REFERENCES Journalist(SSN),
 	 FOREIGN KEY	   	  (ArticleTitle, ArticleDate)
