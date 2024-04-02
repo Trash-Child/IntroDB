@@ -1,46 +1,52 @@
 USE newspaper_db;
 
-INSERT Journalist VALUES
+INSERT INTO Journalist (SSN, FirstName, LastName) VALUES
 ('2412001234','Smith','Jackson'),
 ('0101984321','Anders','Andersen'),
 ('0202651122','Eddy','Thorsen');
-SELECT * FROM Journalist;
+#SELECT * FROM Journalist;
 
-INSERT Address VALUES
-('2412001234','Hovedgade','1','København','1000',NULL,'Denmark'),
-('0101984321','Algade','2','Kgs. Lyngby','2800',NULL,'Denmark'),
-('0202851122','Lærkevej','100','Kgs. Lyngby','2800',NULL,'Denmark');
+INSERT INTO Address (SSN, StreetName, CivicNumber, City, PostalCode, State, Country) VALUES
+('2412001234','Hovedgade','1','København','1000','','Denmark'),
+('0101984321','Algade','2','Kgs. Lyngby','2800','','Denmark'),
+('0202651122','Lærkevej','100','Kgs. Lyngby','2800','','Denmark');
+#SELECT * FROM Address;
 
-INSERT Phone VALUES
+INSERT INTO Phone (Number, SSN) VALUES
 ('12345678','2412001234'),
 ('11223344','0101984321'),
-('87654321','0202851122');
+('87654321','0202651122');
+SELECT * FROM Phone;
 
-INSERT Email VALUES
+INSERT INTO Email (Email, SSN) VALUES
 ('SmithJackson@gmail.com','2412001234'),
 ('AndersAndersen@mail.dk','0101984321'),
-('EddyTheEditor@hotmail.com','0202851122');
+('EddyTheEditor@hotmail.com','0202651122');
 
 INSERT Photo VALUES
-('Dronning Margrethe den anden der spiser en pandekage.','20080531 01:43:12 PM','2412001234','image_data_example'),
-('And i sø.','20000101 01:01:01 AM','0101984321','image_data_example');
+('Dronning Margrethe den anden der spiser en pandekage.','2008-05-31 13:43:12','2412001234','image_data_example'),
+('And i sø.','2000-01-01 01:01:01','0101984321','image_data_example');
 
 INSERT Newspaper VALUES
-('The Daily News','20040716 08:53:17 AM','00000001'),
-('The Weekly News','19901201 12:00:00 PM','00000100');
+('The Daily News','2004-07-16 08:53:17','00000001'),
+('The Weekly News','1990-12-01 12:00:00','00000100');
 
 INSERT Edition VALUES
-('The Daily News','20040801 06:00:00 AM','0101984321'),
-('The Weekly News','19910101 07:00:00 AM','0202851122');
+('The Daily News','2004-08-01 06:00:00','0101984321'),
+('The Daily News','2019-06-01 18:00:00','2412001234'),
+('The Weekly News','1991-01-01 07:00:00','0202851122'),
+('The Weekly News','1998-07-12 07:00:00','0202851122');
 
 INSERT Article VALUES
-('ArticleTitle','ArticleDateTime','Topic','Text','ReadTimes','NewspaperTitle','PubDateTime'),
-('ArticleTitle','ArticleDateTime','Topic','Text','ReadTimes','NewspaperTitle','PubDateTime');
+('Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42','Culture','I dag er dronningen blevet set på åben gade, hvor han ligner en typisk dansk bedstemor. Mange danskere er glade for at se dronningen være ydmyg.','1874','The Daily News','2019-06-01 18:00:00'),
+('Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57','Environment','Efter ny lovgivning om at det er blevet forbudt at smide skrald i parken, er parkens vand blevet renere. Dette har ført til at flere og flere dyr flokkes omkring parkernes søer.','3856','The Weekly News','1998-07-12 07:00:00');
 
 INSERT Author VALUES
-('Biology','Watson','90000'),
-('Comp. Sci.','Taylor','100000');
+('2412001234','Writer','Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42'),
+('0101984321','Leader','Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42'),
+('0202651122','Writer','Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57'),
+('0202651122','Leader','Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57');
 
 INSERT ArticlePhoto VALUES
-('Biology','Watson','90000'),
-('Comp. Sci.','Taylor','100000');
+('Dronning Margrethe den anden der spiser en pandekage.','2008-05-31 13:43:12','2412001234','Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42','The Daily News','2019-06-01 18:00:00'),
+('And i sø.','2000-01-01 01:01:01','0101984321','Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57','The Weekly News','1998-07-12 07:00:00');
