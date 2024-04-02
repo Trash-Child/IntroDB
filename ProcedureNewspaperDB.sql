@@ -38,3 +38,23 @@ DELIMITER ;
 # Viewing the journalists again, to see that nothing is changed: SELECT * FROM Journalist;
 
 
+# Procedure to add a new article.
+DROP PROCEDURE IF EXISTS AddArticle;
+DELIMITER //
+CREATE PROCEDURE AddArticle
+	(IN vArticleTitle VARCHAR(64),
+     IN vArticleDate DATETIME,
+     IN vTopic VARCHAR(64),
+     IN vText TEXT,
+	 IN vReadTimes DECIMAL(16,0),
+     
+     IN vNewspaperTitle VARCHAR(64),
+     IN vPubDate DATETIME)
+    
+	BEGIN
+    
+	INSERT Article
+	VALUES (vArticleTitle, vArticleDate, vTopic, vText, vReadTimes, vNewspaperTitle, vPubDate);
+END //
+DELIMITER ;
+
