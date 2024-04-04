@@ -21,7 +21,7 @@ public class CSV {
         List<String> streetNames = new ArrayList<>();
         List<String> civicNumbers = new ArrayList<>();
         List<String> zipCodes = new ArrayList<>();
-        List<String> countries = new ArrayList<>();
+        List<String> city = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
@@ -37,7 +37,7 @@ public class CSV {
                 streetNames.add(data[5]);
                 civicNumbers.add(data[6]);
                 zipCodes.add(data[7]);
-                countries.add(data[8]);
+                city.add(data[8]);
             }
 
 
@@ -52,7 +52,7 @@ public class CSV {
         String cp = "utf8"; //Database codepage supporting Danish (i.e. æøåÆØÅ)
         // Set username and password.
         String username = "root";		// Username for connection
-        String password = "mypassword";	// Password for username
+        String password = "Master930bf";	// Password for username
 
         String url = "jdbc:mysql://" + host + ":" + port + "/" + database + "?characterEncoding=" + cp;
 
@@ -62,8 +62,19 @@ public class CSV {
             // Create and execute Update.
             Statement statement = connection.createStatement();
 
-            // INSERT TEST
-            statement.executeUpdate("INSERT INTO journalist VALUES('123456789', '" + titles.get(0) + "', 'TESTTEST');");
+            // Loop through all elements
+            for (int i = 0; i < cprs.size(); i++) {
+
+                // INSERT JOURNALIST
+                //if(/* Journalist doesnt exist. add them and their adress*/)
+                statement.executeUpdate("INSERT INTO journalist VALUES('" + cprs.get(i) + "', '" + firstNames.get(i) + "', '" + lastNames.get(i) + "');");
+                // INSERT ADDRESS
+                statement.executeUpdate("INSERT INTO address VALUES ('" + cprs.get(i) + "', '" + streetNames.get(i) + "', '" + civicNumbers.get(i) + "', '" + city.get(i) + "', '" + zipCodes.get(i) + "', '', 'Denmark');");
+
+
+                // INSERT PHOTO
+                statement.executeUpdate("INSERT INTO photo VALUES ('" + titles.get(i) + "', '" + dates.get(i) + "', '" + cprs.get(i) + "', 'image_data_example');");
+            }
 
             // Close connection.
             connection.close();
