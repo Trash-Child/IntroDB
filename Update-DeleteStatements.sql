@@ -1,4 +1,15 @@
 USE newspaper_db;
+/* Insert statemnts */
+
+/* Add journalists */
+INSERT INTO Journalist (SSN, FirstName, LastName)
+VALUES 
+('1234567890', 'Jane', 'Doe'),
+('0987654321', 'John', 'Smith'),
+('1122334455', 'Emily', 'Johnson');
+SELECT * FROM Journalist ;
+
+
 /* Update statemnts */
 
 /* Update journalist name. Suppose Smith Jackson has legally changed his name to Smith Johnson */
