@@ -51,7 +51,7 @@ public class LoadIntoDatabase {
         String cp = "utf8"; //Database codepage supporting Danish (i.e. æøåÆØÅ)
         // Set username and password.
         String username = "root";		// Username for connection
-        String password = "Master930bf";	// Password for username
+        String password = "mypassword";	// Password for username
 
         String url = "jdbc:mysql://" + host + ":" + port + "/" + database + "?characterEncoding=" + cp;
 
