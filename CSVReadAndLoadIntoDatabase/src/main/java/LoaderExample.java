@@ -7,7 +7,7 @@ public class LoaderExample {
 		PhotosAndReportersLoader loader = new PhotosAndReportersLoader();
 		try {
 			System.out.println("loading from uploads.csv");
-			List<PhotoAndReporter> photosAndReporters = loader.loadPhotosAndReporters("uploads.csv");
+			List<PhotoAndReporter> photosAndReporters = loader.loadPhotosAndReporters("CSVReadAndLoadIntoDatabase/src/main/resources/uploads.csv");
 			for(PhotoAndReporter photoAndReporter : photosAndReporters) {
 				System.out.print("\tPhoto: " + photoAndReporter.getPhoto());
 				System.out.println("\tReporter: " + photoAndReporter.getReporter());
