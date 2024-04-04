@@ -11,6 +11,7 @@ DROP VIEW IF EXISTS AuthorRoles;
 drop view if exists TopicReads;
 drop view if exists TopicMostRead;
 drop view if exists TopicLessThanAvg;
+drop view if exists TopWriters;
 
 /*
 	Create views.
@@ -92,7 +93,13 @@ select * from topicmostread;
 Create view TopicLessThanAvg as
 	Select topic, totalreads from topicreads where totalreads < (select avg(totalreads) from topicreads);
 
-    
+Create view TopWriters as
+Select SSN, sum(readtimes) ReadSum from author natural left join articlereadtimes where role='Writer' group by SSN order by ReadSum desc;
+-- select...
+
+-- join articlereadtimes with author, select where role is writer, sort by readtimes
+; -- Limit 3;
+
 /*
 	Test views.
 */
@@ -103,4 +110,5 @@ SELECT * FROM ArticlePhotoCount;
 SELECT * FROM AuthorRoles;
 select * from topicmostread;
 select * from TopicLessThanAvg;
+select * from TopWriters;
 
