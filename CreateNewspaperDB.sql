@@ -123,7 +123,7 @@ CREATE TABLE Article # Article for an edition.
 	 FOREIGN KEY	   	  (ArticleTitle, ArticleDate)
      REFERENCES    Article(ArticleTitle, ArticleDate)
     ); # NOTE: Author becomes author of every edition of the article.
-
+    
     CREATE TABLE ArticlePhoto # Relation between photos used in article edition.
 	(PhotoTitle		VARCHAR(64)		NOT NULL,
 	 PhotoDate		DATETIME		NOT NULL,
