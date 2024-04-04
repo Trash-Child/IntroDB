@@ -37,8 +37,8 @@ INSERT Photo VALUES
 
 
 INSERT Newspaper VALUES
-('The Daily News','2004-07-16 08:53:17','00000001'),
-('The Weekly News','1990-12-01 12:00:00','00000100');
+('The Daily News','2000-02-08 08:53:17','00000001'),
+('The Weekly News','1999-07-27 12:00:00','00000200');
 
 
 INSERT Edition VALUES

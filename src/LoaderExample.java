@@ -6,8 +6,8 @@ public class LoaderExample {
 	public static void main(String[] args) {
 		PhotosAndReportersLoader loader = new PhotosAndReportersLoader();
 		try {
-			System.out.println("loading from "+args[0]);
-			List<PhotoAndReporter> photosAndReporters = loader.loadPhotosAndReporters(args[0]);
+			System.out.println("loading from uploads.csv");
+			List<PhotoAndReporter> photosAndReporters = loader.loadPhotosAndReporters("uploads.csv");
 			for(PhotoAndReporter photoAndReporter : photosAndReporters) {
 				System.out.print("\tPhoto: " + photoAndReporter.getPhoto());
 				System.out.println("\tReporter: " + photoAndReporter.getReporter());
