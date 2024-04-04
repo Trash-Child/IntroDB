@@ -113,12 +113,12 @@ CREATE TABLE Article # Article for an edition.
 	); # NOTE: A unique article edition is characterized by the ArticleDate. This way, an article can be edited before released to the newspaper 'Edition'. I.e: Article edition is not to be confused with 'Edition'.
 
     CREATE TABLE Author # Journalist writing role of an article.
-	(SSN			VARCHAR(16) 	NOT NULL,
+	(SSN			VARCHAR(16)		NOT NULL,
      Role			VARCHAR(64)		NOT NULL,
      ArticleTitle	VARCHAR(100) 	NOT NULL,
      ArticleDate	DATETIME		NOT NULL,
      PRIMARY KEY(SSN, Role, ArticleTitle, ArticleDate),
-	 FOREIGN KEY		  (SSN)
+	 FOREIGN KEY		  (SSN) 
      REFERENCES Journalist(SSN),
 	 FOREIGN KEY	   	  (ArticleTitle, ArticleDate)
      REFERENCES    Article(ArticleTitle, ArticleDate)
