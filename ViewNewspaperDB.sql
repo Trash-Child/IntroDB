@@ -12,6 +12,8 @@ drop view if exists TopicReads;
 drop view if exists TopicMostRead;
 drop view if exists TopicLessThanAvg;
 drop view if exists TopWriters;
+drop view if exists Top10Writers;
+drop view if exists writerreporter;
 
 /*
 	Create views.
@@ -95,10 +97,17 @@ Create view TopicLessThanAvg as
 
 Create view TopWriters as
 Select SSN, sum(readtimes) ReadSum from author natural left join articlereadtimes where role='Writer' group by SSN order by ReadSum desc;
--- select...
 
+Create view Top10Writers as select * from TopWriters limit 10;
 -- join articlereadtimes with author, select where role is writer, sort by readtimes
-; -- Limit 3;
+
+
+Create view WriterReporter as
+Select a.SSN, -- a.role arole, b.role brole, 
+a.articletitle, a.articledate from author a left join author b on a.SSN = b.SSN 
+where a.role = 'Writer' and b.role = 'Reporter' and
+a.articletitle = b.articletitle and
+a.articledate = b.articledate;
 
 /*
 	Test views.
@@ -111,4 +120,5 @@ SELECT * FROM AuthorRoles;
 select * from topicmostread;
 select * from TopicLessThanAvg;
 select * from TopWriters;
-
+select * from Top10Writers;
+select * from writerreporter;
