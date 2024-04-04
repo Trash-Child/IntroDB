@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/CsvFileReader/pom.xml" />
+        <option value="$PROJECT_DIR$/CSVReadAndLoadIntoDatabase/pom.xml" />
       </list>
     </option>
   </component>
