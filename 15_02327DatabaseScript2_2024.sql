@@ -4,9 +4,9 @@ USE newspaper_db;
 /* Add journalists */
 INSERT INTO Journalist (SSN, FirstName, LastName)
 VALUES 
-('1234567890', 'Jane', 'Doe'),
+('1234567898', 'Jane', 'Doe'),
 ('0987654321', 'John', 'Smith'),
-('1122334455', 'Emily', 'Johnson');
+('1122334490', 'Emily', 'Johnson');
 SELECT * FROM Journalist ;
 
 /* Update statemnts */
@@ -30,7 +30,7 @@ SET Text = 'Det var fake news',
 WHERE ArticleTitle = 'Rusland melder om droneangreb over 1.000 kilometer fra Ukraine'
 AND ArticleDate = '2024-04-02 10:43:00'
 AND NewspaperTitle = 'The Daily News'
-AND PubDate = '2004-08-01 06:00:00';
+AND PubDate = '2024-08-01 06:00:00';
 SELECT * FROM Article ;
 
 /* Delete statemnts */
@@ -260,7 +260,7 @@ CREATE PROCEDURE AddArticle
 	VALUES (vArticleTitle, vArticleDate, vTopic, vText, vReadTimes, vNewspaperTitle, vPubDate);
 END //
 DELIMITER ;
-CALL AddArticle('ArticleTitle_test','1800-01-01','Topic_test','Text_test','0','The Daily News','2004-08-01 06:00:00');
+CALL AddArticle('ArticleTitle_test','1800-01-01 04:00:00','Topic_test','Text_test','0','The Daily News','2004-08-01 06:00:00');
 SELECT * FROM Article;
 
 /* FUCNTIONS */

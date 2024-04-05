@@ -150,44 +150,67 @@ INSERT Journalist VALUES
 ('1111113333','Christian','Hansen'),
 ('1312001312','Anita','Modstrøm'),
 ('0102030405','Niels','Numerano'),
-('1312111009','Katrine','Contrano');
-
+('1312111009','Katrine','Contrano'),
+('1122334455','Soren','Sondergaard'),
+('9998887776','Maren','Kristensen'),
+('1716008787','Oliver','Sørensen'),
+('7878787878','Hanne','Petterson'),
+('1357913579','Nino','Nilsson'),
+('2468101214','Karina','Kristensen'),
+('1352464789','Sonny','Olsen'),
+('1919890765','Henny','Heinz'),
+('2392273648','Lise','Lorentzen');
 
 INSERT Address VALUES
 ('2412001234','Hovedgade','1','København','1000','','Denmark'),
 ('0101984321','Algade','2','Kgs. Lyngby','2800','','Denmark'),
 ('0202651122','Lærkevej','100','Kgs. Lyngby','2800','','Denmark');
 
-
 INSERT Phone VALUES 
 ('12345678','2412001234'),
 ('11223344','0101984321'),
 ('87654321','0202651122');
-
 
 INSERT Email VALUES
 ('SmithJackson@gmail.com','2412001234'),
 ('AndersAndersen@mail.dk','0101984321'),
 ('EddyTheEditor@hotmail.com','0202651122');
 
-
 INSERT Photo VALUES
 ('Dronning Margrethe den anden der spiser en pandekage.','2008-05-31 01:43:12','2412001234','image_data_example'),
 ('And i sø.','2000-01-01 01:01:01','0101984321','image_data_example'),
 ('Tank i Ukraine','2024-01-02 17:21:00','2412001234','image_data_example'),
-('Michael Van Prag','2023-01-02 13:21:00','0202651122','image_data_example');
+('Michael Van Prag','2023-01-02 13:21:00','0202651122','image_data_example'),
+('Screenshot fra Lo-Fi stream','2020-01-01 10:15:01','0102030405','image_data_example'),
+('Dnipro efter bombardement','2020-03-03 09:12:01','1312001312','image_data_example'),
+('Kaffebønner i kværn','2021-09-07 11:19:01','1716008787','image_data_example'),
+('Sølvpapirshat','2021-01-020 09:12:00','1716008787','image_data_example'),
+('Skovsegryde med ske','2022-02-02 13:12:01','1716008787','image_data_example'),
+('Rotte i et køkken','2022-02-02 09:00:01','1716008787','image_data_example'),
+('Everest er sunket','2020-03-03 09:12:01','1357913579','image_data_example'),
+('Folk forlader folketinget','2020-03-03 09:12:01','1357913579','image_data_example');
 
 
 INSERT Newspaper VALUES
 ('The Daily News','2000-02-08 08:53:17','00000001'),
-('The Weekly News','1999-07-27 12:00:00','00000200');
+('The Weekly News','1999-07-27 12:00:00','00000200'),
+('The Month in Minutes','2005-07-00 12:00:00','00010000');
 
 
 INSERT Edition VALUES
 ('The Daily News','2004-08-01 06:00:00','0101984321'),
 ('The Daily News','2019-06-01 18:00:00','2412001234'),
+('The Daily News','2020-06-20 06:00:00','1312111009'),
+('The Daily News','2024-04-03 06:00:00','1312111009'),
 ('The Weekly News','1991-01-01 07:00:00','0202651122'),
-('The Weekly News','1998-07-12 07:00:00','0202651122');
+('The Weekly News','1998-07-12 07:00:00','0202651122'),
+('The Weekly News','2022-03-15 06:00:00','0101015500'),
+('The Month in Minutes','2005-07-01 12:00:00','1919890765'),
+('The Month in Minutes','2006-08-02 12:00:00','7878787878'),
+('The Month in Minutes','2010-09-01 12:00:00','1111113333'),
+('The Month in Minutes','2020-10-02 12:00:00','1352464789'),
+('The Month in Minutes','2021-10-01 12:00:00','1352464789'),
+('The Month in Minutes','2022-11-01 12:00:00','2392273648');
 
 INSERT Article VALUES
 ('Rusland melder om droneangreb over 1.000 kilometer fra Ukraine','2024-04-02 10:43:00','Krig','
@@ -231,7 +254,38 @@ Den såkaldte Y2K er frygtet af mange, og af en eller anden grund er der ikke ri
 'Cubakrisen er efterhånden længe siden, men er stadig relevant i opfattelsen af atomvåben',
 1100, 'The Weekly News','1998-07-12 07:00:00'
 ),
-
+('Lo-Fi løfter studieindsatsen','2020-06-10 10:10:10','Kultur',
+'Hjemsendelsen gør det sværere at studere. Flere unge har fundet ud af, det hele bliver lidt lettere med Lo-Fi-musik i baggrunden.',
+2654, 'The Daily News','2020-06-20 06:00:00'
+),
+('Putin: vi gør det for deres skyld','2022-03-03 11:11:11','Krig',
+'Putin insisterer på at invasionen af Ukraine er for alles bedste',
+5533, 'The Weekly News','2022-03-15 06:00:00'
+),
+('Kaffeafhænigheden stiger igen','2021-09-07 12:00:01','Samfund',
+'Efterhånden som landet åbnes op, stiger danskernes kaffebrug. Noget tyder på afhængigheden har været faldet under nedlukningen, men vendt tilbage sammen med en tavlere hverdag.',
+2468, 'The Month in Minutes','2021-10-01 12:00:00'
+),
+('Månedens vildeste konspirationsteori: Q-Anon','2020-10-01 16:21:00','Samfund',
+'En stadigt voksende gruppe er overbevist om at USAs Elite drikker barneblod',
+6172, 'The Month in Minutes','2020-10-02 12:00:00'
+),
+('LA med ny kampagne på borgen - krammer frygten væk','2024-04-02 12:00:00','Politik',
+'LA har foræret en bamse til Ida Auken. Med bamsen følger budskabet at deres politik slet ikke er så skræmmende, som man skulle tro. Nu kan man åbenbart kramme politik.',
+1827, 'The Daily News','2024-04-03 06:00:00'
+),
+('Whiskey- eller rødvinssovs? Køkkenrotte har svaret','2022-10-29 13:29:22','Mad',
+'Køkkenrotterne indtog Noma i sidste uge, og foretrak whiskeysovsen. 8 ud ad 10 rotter gik direkte i den gyldne gryde, mens rødvinssovsen appelerede til fåtallet.',
+3456, 'The Month in Minutes','2022-11-01 12:00:00'
+),
+('Verdens højeste bjerg er faktisk kun nr. 2','2006-07-25 13:29:33','Verden',
+'Mt. Everest er sunket 400 meter siden man målte det sidst. Verdens tidligere næstehøjeste bjerg K2 ligger altså nu nummer et.',
+3251, 'The Month in Minutes','2006-08-02 12:00:00'
+),
+('Partier kommer og går hurtigere end nogensinde før','2005-04-25 13:29:33','Politik',
+'Efter årtusindeskiftet er partiudskiftningen tiltaget kraftigt.',
+2251, 'The Month in Minutes','2005-07-01 12:00:00'
+),
 ('Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42','Kultur','I dag er dronningen blevet set på åben gade, hvor han ligner en typisk dansk bedstemor. Mange danskere er glade for at se dronningen være ydmyg.','1874','The Daily News','2019-06-01 18:00:00'),
 ('Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57','Miljø','Efter ny lovgivning om at det er blevet forbudt at smide skrald i parken, er parkens vand blevet renere. Dette har ført til at flere og flere dyr flokkes omkring parkernes søer.','3856','The Weekly News','1998-07-12 07:00:00'),
 ('Brøndby vinder over FCK', '2020-05-13 12:34:00', 'Sport','FCK kom foran 1-0 men tabte 2-1. Øv', '2143','The Weekly News','1998-07-12 07:00:00');
@@ -253,13 +307,44 @@ INSERT Author VALUES
 ('1111113333','Writer','Cubakrisens effekt på moderne krigsførsel','2003-12-12 16:29:00'),
 ('1312111009','Writer','Er agurketiden endeligt forbi? Miljøkatastrofen truer Jens Hansens agurkegård','2000-11-19 20:13:00'),
 ('0101015500','Leader','Er agurketiden endeligt forbi? Miljøkatastrofen truer Jens Hansens agurkegård','2000-11-19 20:13:00'),
-('1312111009','Reporter','Flashback: 5 år siden - Da elektronikken overlevede årtusindeskiftet','1999-12-31 23:23:23');
+('0102030405','Reporter','Lo-Fi løfter studieindsatsen','2020-06-10 10:10:10'),
+('1312111009','Leader','Lo-Fi løfter studieindsatsen','2020-06-10 10:10:10'),
+('1312111009','Reporter','Flashback: 5 år siden - Da elektronikken overlevede årtusindeskiftet','1999-12-31 23:23:23'),
+('1312001312','Leader','Putin: vi gør det for deres skyld','2022-03-03 11:11:11'),
+('1312001312','Reporter','Putin: vi gør det for deres skyld','2022-03-03 11:11:11'),
+('0101015500','Writer','Putin: vi gør det for deres skyld','2022-03-03 11:11:11'),
+('1716008787','Reporter','Kaffeafhænigheden stiger igen','2021-09-07 12:00:01'),
+('1357913579','Writer','Kaffeafhænigheden stiger igen','2021-09-07 12:00:01'),
+('2412001234','Leader','Kaffeafhænigheden stiger igen','2021-09-07 12:00:01'),
+('1716008787','Reporter','Månedens vildeste konspirationsteori: Q-Anon','2020-10-01 16:21:00'),
+('2468101214','Leader','Månedens vildeste konspirationsteori: Q-Anon','2020-10-01 16:21:00'),
+('1352464789','Writer','Månedens vildeste konspirationsteori: Q-Anon','2020-10-01 16:21:00'),
+('1122334455','Writer','LA med ny kampagne på borgen - krammer frygten væk','2024-04-02 12:00:00'),
+('1122334455','Leader','LA med ny kampagne på borgen - krammer frygten væk','2024-04-02 12:00:00'),
+('2392273648','Writer','Whiskey- eller rødvinssovs? Køkkenrotte har svaret','2022-10-29 13:29:22'),
+('2392273648','Leader','Whiskey- eller rødvinssovs? Køkkenrotte har svaret','2022-10-29 13:29:22'),
+('1716008787','Reporter','Whiskey- eller rødvinssovs? Køkkenrotte har svaret','2022-10-29 13:29:22'),
+('1357913579','Reporter','Verdens højeste bjerg er faktisk kun nr. 2','2006-07-25 13:29:33'),
+('1919890765','Writer','Verdens højeste bjerg er faktisk kun nr. 2','2006-07-25 13:29:33'),
+('2392273648','Leader','Verdens højeste bjerg er faktisk kun nr. 2','2006-07-25 13:29:33'),
+('7878787878','Writer','Partier kommer og går hurtigere end nogensinde før','2005-04-25 13:29:33'),
+('7878787878','Leader','Partier kommer og går hurtigere end nogensinde før','2005-04-25 13:29:33'),
+('1357913579','Reporter','Partier kommer og går hurtigere end nogensinde før','2005-04-25 13:29:33');
+
 
 INSERT ArticlePhoto VALUES
 ('Tank i Ukraine','2024-01-02 17:21:00','2412001234', 'Rusland melder om droneangreb over 1.000 kilometer fra Ukraine','2024-04-02 10:43:00', 'The Daily News','2004-08-01 06:00:00'),
 ('Michael Van Prag','2023-01-02 13:21:00','0202651122', 'Topboss suspenderet efter mistanke om insiderhandel','2023-02-13 11:37:00', 'The Weekly News','1991-01-01 07:00:00'),
 ('Dronning Margrethe den anden der spiser en pandekage.','2008-05-31 01:43:12','2412001234','Dronningen ses på åben gade og ligner enhver borger.','2019-05-31 17:23:42','The Daily News','2019-06-01 18:00:00'),
-('And i sø.','2000-01-01 01:01:01','0101984321','Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57','The Weekly News','1998-07-12 07:00:00');
+('And i sø.','2000-01-01 01:01:01','0101984321','Dyrelivet blomstrer igen i indre København efter ny lov.','1998-07-10 13:01:57','The Weekly News','1998-07-12 07:00:00'),
+('Screenshot fra Lo-Fi stream','2020-01-01 10:15:01','0102030405','Lo-Fi løfter studieindsatsen','2020-06-10 10:10:10','The Daily News','2020-06-20 06:00:00'),
+('Dnipro efter bombardement','2020-03-03 09:12:01','1312001312','Putin: vi gør det for deres skyld','2022-03-03 11:11:11','The Weekly News','2022-03-15 06:00:00'),
+('Kaffebønner i kværn','2021-09-07 11:19:01','1716008787','Kaffeafhænigheden stiger igen','2021-09-07 12:00:01','The Month in Minutes','2021-10-01 12:00:00'),
+('Sølvpapirshat','2021-01-020 09:12:00','1716008787','Månedens vildeste konspirationsteori: Q-Anon','2020-10-01 16:21:00','The Month in Minutes','2020-10-02 12:00:00'),
+('Skovsegryde med ske','2022-02-02 13:12:01','1716008787','Whiskey- eller rødvinssovs? Køkkenrotte har svaret','2022-10-29 13:29:22','The Month in Minutes','2022-11-01 12:00:00'),
+('Rotte i et køkken','2022-02-02 09:00:01','1716008787','Whiskey- eller rødvinssovs? Køkkenrotte har svaret','2022-10-29 13:29:22','The Month in Minutes','2022-11-01 12:00:00'),
+('Everest er sunket','2020-03-03 09:12:01','1357913579','Verdens højeste bjerg er faktisk kun nr. 2','2006-07-25 13:29:33','The Month in Minutes','2006-08-02 12:00:00'),
+('Folk forlader folketinget','2020-03-03 09:12:01','1357913579','Partier kommer og går hurtigere end nogensinde før','2005-04-25 13:29:33','The Month in Minutes','2005-07-01 12:00:00');
 
 SELECT * FROM Journalist;
 SELECT * FROM Address;
