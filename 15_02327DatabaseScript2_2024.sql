@@ -260,7 +260,7 @@ CREATE PROCEDURE AddArticle
 	VALUES (vArticleTitle, vArticleDate, vTopic, vText, vReadTimes, vNewspaperTitle, vPubDate);
 END //
 DELIMITER ;
-CALL AddArticle('ArticleTitle_test','1800-01-01 04:00:00','Topic_test','Text_test','0','The Daily News','2004-08-01 06:00:00');
+CALL AddArticle('ArticleTitle_test','2001-01-01 04:00:00','Topic_test','Text_test','0','The Daily News','2004-08-01 06:00:00');
 SELECT * FROM Article;
 
 /* FUCNTIONS */
