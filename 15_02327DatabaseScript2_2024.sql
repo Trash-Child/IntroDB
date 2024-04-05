@@ -125,18 +125,18 @@ WHERE SSN = 'YourSSNHere';
 
 -- Q6: FIND MOST READ ARTICLE IN EACH TOPIC
 -- Find max(readtimes) for every topic
-CREATE VIEW TopicReads as
-select topic, sum(readtimes) totalreads, max(readtimes) maxreads, avg(readtimes) avgreads from article group by topic;
+CREATE VIEW topicreads as
+select Topic, sum(ReadTimes) totalreads, max(ReadTimes) maxreads, avg(ReadTimes) avgreads from Article group by Topic;
 select * from topicreads;
 -- Find article in each topic that corresponds to the most read 
-CREATE VIEW TopicMostRead as
-select topicreads.topic Topic, articletitle MostReadArticle, article.readtimes ReadTimes, ArticleDate, Newspapertitle, Pubdate
-from article natural left join topicreads where article.topic = topicreads.topic and article.readtimes = topicreads.maxreads;
+CREATE VIEW topicmostread as
+select topicreads.Topic Topic, ArticleTitle MostReadArticle, Article.ReadTimes ReadTimes, ArticleDate, NewspaperTitle, PubDate
+from Article natural left join topicreads where Article.Topic = topicreads.Topic and Article.ReadTimes = topicreads.maxreads;
 
 
 -- Q6: Identify top journalists
 Create view TopWriters as
-Select SSN, sum(readtimes) ReadSum from author natural left join articlereadtimes where role='Writer' group by SSN order by ReadSum desc;
+Select SSN, sum(readtimes) ReadSum from Author natural left join ArticleReadTimes where role='Writer' group by SSN order by ReadSum desc;
 Create view Top10Writers as select * from TopWriters limit 10;
 
 /* Q(3) - Which are the reporters whose photos were never used more than once. */ 
@@ -165,12 +165,12 @@ Create view TopicLessThanAvg as
 	Select topic, totalreads from topicreads where totalreads < (select avg(totalreads) from topicreads);
     
 -- Q6: Identify journalists who were both writers and reporters for the same article
-Create view WriterReporter as
+Create view writerreporter as
 Select a.SSN, -- a.role arole, b.role brole, 
-a.articletitle, a.articledate from author a left join author b on a.SSN = b.SSN 
+a.ArticleTitle, a.ArticleDate from Author a left join Author b on a.SSN = b.SSN 
 where a.role = 'Writer' and b.role = 'Reporter' and
-a.articletitle = b.articletitle and
-a.articledate = b.articledate;
+a.ArticleTitle = b.ArticleTitle and
+a.ArticleDate = b.ArticleDate;
 
 /*
 	Test views.
@@ -260,8 +260,10 @@ CREATE PROCEDURE AddArticle
 	VALUES (vArticleTitle, vArticleDate, vTopic, vText, vReadTimes, vNewspaperTitle, vPubDate);
 END //
 DELIMITER ;
+/*
 CALL AddArticle('ArticleTitle_test','2001-01-01 04:00:00','Topic_test','Text_test','0','The Daily News','2004-08-01 06:00:00');
 SELECT * FROM Article;
+*/
 
 /* FUCNTIONS */
 
