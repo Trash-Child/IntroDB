@@ -207,7 +207,8 @@ DROP PROCEDURE IF EXISTS AddJournalist;
 DELIMITER //
 CREATE PROCEDURE AddJournalist
 	(IN vSSN VARCHAR(16), IN vFirstName VARCHAR(64), IN vLastName VARCHAR(64),
-	IN vStreetName VARCHAR(64), IN vCivicNumber VARCHAR(16), IN vCity VARCHAR(64), IN vPostalCode VARCHAR(16), IN vState VARCHAR(64), IN vCountry VARCHAR(64),
+	IN vStreetName VARCHAR(64), IN vCivicNumber VARCHAR(16), IN vCity VARCHAR(64),
+    IN vPostalCode VARCHAR(16), IN vState VARCHAR(64), IN vCountry VARCHAR(64),
 	IN vNumber DECIMAL(32,0),
 	IN vEmail VARCHAR(64))
     
@@ -235,9 +236,17 @@ CREATE PROCEDURE AddJournalist
 END //
 DELIMITER ;
 # 	Test
-# Adding journalist Lars Larsen: CALL AddJournalist('0101011234','Lars','Larsen','Gadevej','2 1.th','Lazy Town','1337','','Utopia','88888888','LarsDenStore@hotmail.com');
-# Viewing the journalists: SELECT * FROM Journalist;
-# Trying to add journalist with same phone number. Should fail: CALL AddJournalist('8932832573','erthwh','wrhawr','beathb','2 1.th','aethb','1337','','Utopia','88888888','wrgbwr@hotmail.com');
+SELECT * FROM Journalist;
+# Adding journalist Lars Larsen:
+CALL AddJournalist('0101011234','Lars','Larsen','Gadevej','2 1.th','Lazy Town','1337','','Utopia','88888888','LarsDenStore@hotmail.com');
+# Viewing the journalists:
+SELECT * FROM Journalist;
+# Viewing the phone numbers, addresses and emails:
+SELECT * FROM Phone;
+SELECT * FROM Address;
+SELECT * FROM Email;
+# Trying to add journalist with same phone number. Should fail:
+# CALL AddJournalist('8932832573','erthwh','wrhawr','beathb','2 1.th','aethb','1337','','Utopia','88888888','wrgbwr@hotmail.com');
 # Viewing the journalists again, to see that nothing is changed: SELECT * FROM Journalist;
 
 
